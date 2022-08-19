@@ -1,0 +1,70 @@
+@model Hospital.Models.Medicamento
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+
+<h4>Medicamento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdMedicamento" />
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">medication</i>
+                    <input asp-for="Nombre" id="icon_prefix" type="text" class="validate">
+                    <label asp-for="Nombre" for="icon_prefix">Medicamento</label>
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+            </div>
+             <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">qr_code_2</i>
+                    <input asp-for="Codigo" id="icon_prefix" type="text" class="validate">
+                    <label asp-for="Codigo" for="icon_prefix">Código</label>
+                    <span asp-validation-for="Codigo" class="text-danger"></span>
+                </div>
+            </div>
+             <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">warning</i>
+                    <input asp-for="Observacion" id="icon_prefix" type="text" class="validate">
+                    <label asp-for="Observacion" for="icon_prefix">Observación</label>
+                    <span asp-validation-for="Observacion" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" col s6 m4">
+                     <button asp-action="Index" class="btn waves-effect waves-light" type="submit" name="action">Volver
+                        </a><i class="material-icons left">west</i>
+                        
+                    </button>
+                   
+                </div> 
+                <div>
+
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
+                        </a><i class="material-icons right">send</i>
+                        
+                    </button>
+                                
+                    
+
+                </div>  
+            
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+@model Hospital.Models.Atencion
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+        <div>
+            <h4>Atencion</h4>
+            <hr />
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Fecha)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Hora)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Categoria)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AtencionMedico[0].Medico)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NombrePaciente)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NombreMedicamento)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => model.Fecha)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Hora)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Categoria)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.AtencionMedico[0].Medico.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.NombrePaciente)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.NombreMedicamento)
+                        </td>
+                        
+                    </tr>
+
+                </tbody>
+
+            </table>
+            
+        </div>
+        <div>
+                <a asp-action="Index" class="btn waves-effect waves-light" type="submit" name="action">Volver<i class="material-icons left">west</i></a>
+                <a asp-action="Edit" asp-route-id="@Model.IdAtencion" class="btn waves-effect  amber lighten-1">Editar<i class="material-icons right">edit</i></a> 
+        </div>
+</body>
+</html>

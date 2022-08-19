@@ -1,0 +1,96 @@
+@model Hospital.Models.Atencion
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+
+
+div>
+            <h4>Atencion</h4>
+            <hr />
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Fecha)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Hora)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Categoria)
+                        </th>
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.NombrePaciente)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NombreMedicamento)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => model.Fecha)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Hora)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Categoria)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.NombrePaciente)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.NombreMedicamento)
+                        </td>
+                        
+                    </tr>
+
+                </tbody>
+
+            </table>
+            <div>
+     <form asp-action="Delete">
+                        
+        <a asp-action="Index" class="btn waves-effect waves-light" type="submit" name="action">Volver<i class="material-icons left">west</i></a>
+        <input type="hidden" asp-for="IdAtencion" name="del" id="del" value=""/>
+        <button class="btn waves-effect waves-light  red lighten-1" type="submit"  value="Delete" name="action" onclick="Alerta()">Eliminar
+        <i class="material-icons right">delete</i>
+                                
+        </button>
+
+       
+       
+    </form>
+    
+</div>
+            
+        </div>
+
+   <script>
+       function Alerta(){
+          
+        	var opcion = confirm("Seguro desea eliminar este reistro?");
+            if (opcion == true) {
+                document.getElementById("del").value ="eliminar";
+               
+            } else {
+                 document.getElementById("del").value ="No_eliminar";
+            }
+       }
+
+   </script>
+</body>
+</html>
